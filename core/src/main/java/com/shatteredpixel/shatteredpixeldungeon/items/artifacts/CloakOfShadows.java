@@ -53,7 +53,7 @@ public class CloakOfShadows extends Artifact {
 		image = ItemSpriteSheet.ARTIFACT_CLOAK;
 
 		exp = 0;
-		levelCap = 10;
+		levelCap = 100;
 
 		charge = Math.min(level()+3, 10);
 		partialCharge = 0;
@@ -231,7 +231,7 @@ public class CloakOfShadows extends Artifact {
 				if (activeBuff == null && (lock == null || lock.regenOn())) {
 					float missing = (chargeCap - charge);
 					if (level() > 7) missing += 5*(level() - 7)/3f;
-					float turnsToCharge = (45 - missing);
+					float turnsToCharge = (1 - missing);
 					turnsToCharge /= RingOfEnergy.artifactChargeMultiplier(target);
 					float chargeToGain = (1f / turnsToCharge);
 					if (!isEquipped(Dungeon.hero)){
